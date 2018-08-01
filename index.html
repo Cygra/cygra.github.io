@@ -69,11 +69,14 @@
 	.thing:not(.display) {
 		display: none;
 	}
+	.mobile {
+		display: none;
+	}
 	</style>
 </head>
 <body>
 
-<div class="header banner">
+<div class="header banner desktop">
 	<div class="banner-inner">
 			Cygra's Site
 	</div>
@@ -96,7 +99,7 @@
 		</div>
 	</div>
 </div>
-<div class="container">
+<div class="container desktop">
 	<div class="thing index display">
 		还没想好放啥。
 	</div>
@@ -227,10 +230,18 @@
 	</div>
 </div>
 
-<div class="footer banner">
+<div class="footer banner desktop">
 	<div class="banner-inner">
 		Because life is so brief and time is a thief when you're undecided.
 	</div>
+</div>
+
+<div class="mobile">
+	<p>别用手机看</p>
+	<p>可丑了</p>
+	<p>真的</p>
+	<p>样式我懒得搞了</p>
+	<p>用电脑</p>
 </div>
 
 <script type="text/javascript">
@@ -244,6 +255,13 @@
 
 <script type="text/javascript">
 $(function() {
+	if ($(window).width < 768) {
+		$('.desktop').hide()
+		$('.mobile').show()
+	}
+
+
+
 	$('.nav-item')
 	.hover(
 		function() {
