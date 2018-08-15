@@ -220,8 +220,8 @@ $(function() {
 		function() {
 			$(this).addClass('active')
 				.siblings().removeClass('active').find('.nav-line').width('0')
-			$('.' + $(this).data('show')).addClass('display')
-				.siblings().removeClass('display')
+			$('.' + $(this).data('show')).removeClass('hidden')
+				.siblings().addClass('hidden')
 		}
 	)
 })

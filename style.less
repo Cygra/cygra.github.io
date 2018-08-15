@@ -1,28 +1,33 @@
-.db { display: block }
-
-.w100 { width: 100% }
-
-.borderGray { border: 1px solid #666 }
-
+@white:      #FFF;
+@gray:       #666;
 .alignCenter { text-align: center }
+.borderGray  { border: 1px solid @gray }
+.curp        { cursor: pointer }
+.db          { display: block }
+.fl          { float: left }
+.fr          { float: right }
+.hidden      { display: none }
+.m0          { margin: 0 }
+.p0          { padding: 0 }
+.w100        { width: 100% }
 
 body {
-  margin: 0 auto;
   .w100;
-  max-width: 1024px;
-  padding: 0;
+  .p0;
   .borderGray;
+  margin: 0 auto;
+  max-width: 1024px;
   p {
     .db;
     .w100;
-    margin-top: 40px;
     .alignCenter;
+    margin-top: 40px;
   }
   .banner {
     .w100;
-    background: white;
-    line-height: 20px;
     .alignCenter;
+    background: @white;
+    line-height: 20px;
     .banner-inner {
       .w100;
       padding: 20px 0;
@@ -32,20 +37,20 @@ body {
   .header {
     height: 84px;
     font-size: 20px;
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid @gray;
     .nav {
       height: 24px;
       .w100;
       .nav-item {
+        .fl;
+        .alignCenter;
+        .curp;
         height: 20px;
         width: 25%;
-        float: left;
-        .alignCenter;
-        cursor: pointer;
         .nav-line {
           width: 0;
           height: 4px;
-          background-color: #666;
+          background-color: @gray;
           margin: 0 auto;
         }
         &.active .nav-line {
@@ -57,22 +62,16 @@ body {
 
   .container {
     .w100;
+    .m0;
     min-height: 600px;
-    margin: 0;
     overflow: auto;
     .thing {
       .w100;
-      &:not(.display) {
-        display: none;
-      }
     }
   }
   .footer {
     height: 60px;
     font-size: 16px;
-    border-top: 1px solid #666;
-  }
-  .mobile {
-    display: none;
+    border-top: 1px solid @gray;
   }
 }
