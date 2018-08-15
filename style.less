@@ -12,6 +12,7 @@
 .fr          { float: right }
 .hidden      { display: none }
 .m0          { margin: 0 }
+.ml10        { margin-left: 10px }
 .p0          { padding: 0 }
 .w100        { width: @100 }
 
@@ -71,6 +72,16 @@ body {
     overflow: auto;
     .thing {
       .w100;
+      &.rubbish {
+        label,
+        .float-left.pt-2.pl-3,
+        .float-right.col-2 {
+          .hidden;
+        }
+        .labels.lh-default {
+          .ml10;
+        }
+      }
     }
   }
   .footer {
