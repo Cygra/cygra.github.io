@@ -1,7 +1,11 @@
 @white:      #FFF;
 @gray:       #666;
+@100:          100%;
+@line:         1px solid;
 .alignCenter { text-align: center }
-.borderGray  { border: 1px solid @gray }
+.borderGray  { border: @line @gray }
+.borderGrayB { border-bottom: @line @gray }
+.borderGrayT { border-top: @line @gray }
 .curp        { cursor: pointer }
 .db          { display: block }
 .fl          { float: left }
@@ -9,7 +13,7 @@
 .hidden      { display: none }
 .m0          { margin: 0 }
 .p0          { padding: 0 }
-.w100        { width: 100% }
+.w100        { width: @100 }
 
 body {
   .w100;
@@ -35,9 +39,9 @@ body {
   }
 
   .header {
+    .borderGrayB;
     height: 84px;
     font-size: 20px;
-    border-bottom: 1px solid @gray;
     .nav {
       height: 24px;
       .w100;
@@ -46,7 +50,7 @@ body {
         .alignCenter;
         .curp;
         height: 20px;
-        width: 25%;
+        width: @100/4;
         .nav-line {
           width: 0;
           height: 4px;
@@ -70,8 +74,8 @@ body {
     }
   }
   .footer {
+    .borderGrayT;
     height: 60px;
     font-size: 16px;
-    border-top: 1px solid @gray;
   }
 }
