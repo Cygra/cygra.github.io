@@ -941,24 +941,38 @@
   </div>
   <script type="text/javascript">
   $(function() {
-    $('.nav-item')
-    .hover(
-      function() {
-        $(this).find('.nav-line').animate({width:"100%"}, 100)
-      },
-      function() {
-        !$(this).hasClass('active')
-          && $(this).find('.nav-line').animate({width:"0"}, 100)
-      }
-    )
-    .click(
-      function() {
-        $(this).addClass('active')
-          .siblings().removeClass('active').find('.nav-line').width('0')
-        $('.' + $(this).data('show')).removeClass('hidden')
-          .siblings().addClass('hidden')
-      }
-    )
+		if ($(window).width >= 960) {
+			$('.nav-item')
+			.hover(
+				function() {
+					$(this).find('.nav-line').animate({width:"100%"}, 100)
+				},
+				function() {
+					!$(this).hasClass('active')
+						&& $(this).find('.nav-line').animate({width:"0"}, 100)
+				}
+			)
+			.click(
+				function() {
+					$(this).addClass('active')
+						.siblings().removeClass('active').find('.nav-line').width('0')
+					$('.' + $(this).data('show')).removeClass('hidden')
+						.siblings().addClass('hidden')
+				}
+			)
+		} else {
+			$('.nav-item').click(
+				function() {
+					$(this).addClass('active')
+						.find('.nav-line').animate({width:"100%"}, 100)
+					$(this).siblings().removeClass('active')
+						.find('.nav-line').width('0')
+					$('.' + $(this).data('show')).removeClass('hidden')
+						.siblings().addClass('hidden')
+				}
+			)
+		}
+
     $('.link-gray-dark.v-align-middle.no-underline.h4.js-navigation-open, .d-inline-block.IssueLabel.v-align-text-top').each(function() {
       var href = $(this).attr('href')
       href = 'https://github.com' + href
