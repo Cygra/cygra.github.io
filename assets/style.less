@@ -24,13 +24,16 @@ body {
   .borderGray;
   margin: 0 auto;
   max-width: 1024px;
+  @media @mobile {
+    border: none;
+  }
   p {
     .db;
     .w100;
     .alignCenter;
     margin-top: 40px;
     @media @mobile {
-      font-size: 40px;
+      font-size: 16px;
     }
   }
 
@@ -42,6 +45,7 @@ body {
     .banner-inner {
       .w100;
       padding: 20px 0;
+      font-variant: small-caps;
     }
   }
 
