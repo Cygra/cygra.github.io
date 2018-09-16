@@ -1,1 +1,1 @@
-[Cygræ Site](#https://cygra.wang)
+[Cygræ Site](https://cygra.wang)
